@@ -302,6 +302,7 @@
       }).join("")}</div>
       <div class="sim-section-title"><h2>Partie 2B — Lettre administrative</h2><span>250 à 300 mots conseillés</span></div>
       <article class="writing-task"><h3>Mandat</h3><p>${escapeHTML(simulation.task)}</p><textarea class="sim-answer" data-sim-draft placeholder="Rédigez votre lettre complète…" ${saved.submitted ? "disabled" : ""}>${escapeHTML(saved.draft || "")}</textarea><div class="editor-actions"><button class="button primary" type="button" id="submit-simulation" ${saved.submitted ? "disabled" : ""}>Soumettre la simulation</button><button class="button ghost" type="button" id="save-simulation">Enregistrer</button></div></article>
+      ${saved.submitted ? renderLetterSolution(simulation) : ""}
       ${saved.submitted ? renderSimulationResult(simulation, saved) : ""}
     `;
     $$('[data-simulation]').forEach(button => button.addEventListener("click", () => { activeSimulation = button.dataset.simulation; stopTimer(); renderSimulations(); }));
@@ -327,6 +328,24 @@
     const [prompt, options, answer] = question;
     const selected = saved.answers[index];
     return `<article class="question-card"><div class="question-meta"><span>QCM ${String(index + 1).padStart(2, "0")}</span><span>1 point</span></div><h3>${escapeHTML(prompt)}</h3><div class="options">${options.map((option, optionIndex) => `<label class="option ${saved.submitted ? (optionIndex === answer ? "correct" : (selected === optionIndex ? "incorrect" : "")) : ""}"><input type="radio" name="${simulation.id}-q${index}" value="${optionIndex}" data-sim-q="${index}" ${selected === optionIndex ? "checked" : ""} ${saved.submitted ? "disabled" : ""}><span>${escapeHTML(option)}</span></label>`).join("")}</div>${saved.submitted ? `<div class="feedback show ${selected === answer ? "good" : "bad"}">${escapeHTML(question[3])}</div>` : ""}</article>`;
+  }
+
+  function renderLetterSolution(simulation) {
+    if (!simulation.letterModel) return "";
+    const model = simulation.letterModelAddition
+      ? simulation.letterModel.replace("\n\nNous vous prions d’agréer", `\n\n${simulation.letterModelAddition}\n\nNous vous prions d’agréer`)
+      : simulation.letterModel;
+    const wordCount = model.trim().split(/\s+/).length;
+    return `<section class="letter-solution" aria-labelledby="letter-solution-title">
+      <div class="letter-solution-heading">
+        <div><p class="eyebrow">Proposition de solution — Partie 2B</p><h3 id="letter-solution-title">Une lettre administrative possible</h3></div>
+        <span>${wordCount} mots avec les éléments d’adresse</span>
+      </div>
+      <p class="letter-solution-intro">Il ne s’agit pas de la seule bonne réponse. Comparez surtout la couverture du mandat, l’ordre des idées, la précision des demandes et la structure de la lettre.</p>
+      <p class="module-source">Source et statut : ${escapeHTML(simulation.letterSource)}</p>
+      <div class="model-answer letter-model">${escapeHTML(model)}</div>
+      <div class="letter-checkpoints"><strong>Points à repérer dans le modèle</strong>${simulation.rubric.map(item => `<span>✓ ${escapeHTML(item)}</span>`).join("")}</div>
+    </section>`;
   }
 
   function renderSimulationResult(simulation, saved) {
