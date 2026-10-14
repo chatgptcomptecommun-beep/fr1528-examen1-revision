@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Parcours interactif de révision pour l’Examen 1 du cours FR1528 — rédaction technique et scientifique.">
+  <meta name="theme-color" content="#14213d">
+  <title>FR1528 — Cap sur l’Examen 1</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="topbar">
+    <a class="brand" href="#accueil" data-route="accueil" aria-label="Retour à l’accueil">
+      <span class="brand-mark" aria-hidden="true">FR</span>
+      <span><strong>FR1528</strong><small>Cap sur l’Examen 1</small></span>
+    </a>
+    <div class="topbar-actions">
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Activer le thème sombre" title="Changer de thème">◐</button>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation principale">
+      <div class="progress-card">
+        <div class="progress-head"><span>Votre progression</span><strong id="progress-label">0 %</strong></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        <p id="progress-detail">Commencez par le format de l’examen.</p>
+      </div>
+
+      <nav id="main-nav">
+        <p class="nav-kicker">Parcours</p>
+        <a href="#accueil" data-route="accueil" class="nav-link active"><span>01</span>Accueil</a>
+        <a href="#modules" data-route="modules" class="nav-link"><span>02</span>Modules</a>
+        <a href="#atelier" data-route="atelier" class="nav-link"><span>03</span>Atelier semaine 5</a>
+        <a href="#pratique" data-route="pratique" class="nav-link"><span>04</span>Pratique interactive</a>
+        <a href="#simulations" data-route="simulations" class="nav-link"><span>05</span>Simulations</a>
+        <a href="#ressources" data-route="ressources" class="nav-link"><span>06</span>Ressources</a>
+      </nav>
+
+      <div class="exam-mini">
+        <span class="status-dot"></span>
+        <div><strong>Examen aujourd’hui</strong><small>14 oct. 2026 · 19 h · MHN 033</small></div>
+      </div>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <section class="view active" id="view-accueil" data-view="accueil">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Examen de mi-session · 25 %</p>
+            <h1>Trois heures.<br><em>Un plan clair.</em></h1>
+            <p class="hero-lead">Un parcours guidé pour comprendre les notions essentielles, s’entraîner avec rétroaction et arriver à la lettre administrative avec une méthode solide.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#modules" data-route="modules">Commencer le parcours <span>→</span></a>
+              <a class="button ghost" href="#simulations" data-route="simulations">Faire un examen blanc</a>
+            </div>
+          </div>
+          <div class="exam-card" aria-label="Résumé de l’examen">
+            <div class="exam-card-top"><span>EXAMEN 01</span><span class="pill">Livre fermé</span></div>
+            <div class="time-display">19<span>h</span>00</div>
+            <p>Mercredi 14 octobre 2026</p>
+            <div class="exam-stats">
+              <div><strong>3 h</strong><span>Durée</span></div>
+              <div><strong>2</strong><span>Parties</span></div>
+              <div><strong>MHN 033</strong><span>Local</span></div>
+            </div>
+            <div class="allowed"><span>✓</span><p><strong>À apporter</strong>Dictionnaire unilingue français + carte étudiante</p></div>
+          </div>
+        </div>
+
+        <div class="mandatory-note">
+          <div class="note-icon" aria-hidden="true">!</div>
+          <div><p class="eyebrow">À lire impérativement</p><h2>Annonce Examen 1.txt</h2><p>C’est la seule source qui fixe officiellement le format, la durée, les notions et le matériel autorisé.</p></div>
+          <a href="https://drive.google.com/file/d/1GMNal8rSWynnIBMPjJSvcafPpHAT1y9q/view" target="_blank" rel="noopener">Ouvrir dans Drive ↗</a>
+        </div>
+
+        <section class="section-block">
+          <div class="section-heading"><div><p class="eyebrow">Votre itinéraire</p><h2>Réviser dans le bon ordre</h2></div><p>Le parcours va des fondations grammaticales à la production complète d’une lettre.</p></div>
+          <div class="route-grid" id="home-route-grid"></div>
+        </section>
+
+        <section class="section-block split-section">
+          <div>
+            <p class="eyebrow">Objectifs d’examen</p>
+            <h2>Ce qu’on attend concrètement</h2>
+            <ul class="clean-list check-list">
+              <li>Reconnaître et corriger une construction de phrase fautive.</li>
+              <li>Choisir une ponctuation et une typographie professionnelles.</li>
+              <li>Exprimer le bon rapport logique entre deux idées.</li>
+              <li>Employer la préposition exigée par le verbe.</li>
+              <li>Choisir l’impératif ou l’infinitif selon la consigne.</li>
+              <li>Analyser un mandat et rédiger une lettre administrative complète.</li>
+            </ul>
+          </div>
+          <div class="strategy-card">
+            <p class="eyebrow">Si vous avez peu de temps</p>
+            <h3>Le parcours express — 90 min</h3>
+            <ol>
+              <li><span>15 min</span>Format + erreurs fréquentes</li>
+              <li><span>25 min</span>Ponctuation + liens logiques</li>
+              <li><span>15 min</span>Prépositions + impératif</li>
+              <li><span>35 min</span>Structure de la lettre + mini-rédaction</li>
+            </ol>
+            <button class="text-button" data-start-express>Marquer le parcours express comme prioritaire →</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-modules" data-view="modules">
+        <div class="page-hero compact">
+          <div><p class="eyebrow">Progression recommandée</p><h1>Les notions, <em>une étape à la fois.</em></h1></div>
+          <p>Chaque fiche relie une règle, son utilité à l’examen, un piège fréquent et un exemple — avec la source Drive explicite.</p>
+        </div>
+        <div class="module-layout">
+          <div class="module-tabs" id="module-tabs" role="tablist" aria-label="Modules de révision"></div>
+          <div id="module-content" class="module-content"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-atelier" data-view="atelier">
+        <div class="page-hero compact">
+          <div><p class="eyebrow">Activité adaptée · Semaine 5</p><h1>De l’analyse du mandat<br>à la <em>lettre complète.</em></h1></div>
+          <p>Une version guidée de l’activité de préparation à l’examen, avec plan, zone de rédaction, modèle et autoévaluation.</p>
+        </div>
+        <div class="mandatory-note small">
+          <div class="note-icon" aria-hidden="true">!</div>
+          <div><p class="eyebrow">À lire impérativement</p><h2>Activité de rédaction — Lettre administrative</h2><p>Elle reproduit le type de tâche annoncé pour la partie rédaction.</p></div>
+          <a href="https://docs.google.com/document/d/1Dp2C1TTOOdtiNwpyStTFOyN28oXmlJ3-/edit" target="_blank" rel="noopener">Source Drive ↗</a>
+        </div>
+        <div id="workshop-root"></div>
+      </section>
+
+      <section class="view" id="view-pratique" data-view="pratique">
+        <div class="page-hero compact">
+          <div><p class="eyebrow">Entraînement actif</p><h1>Comprendre, répondre,<br><em>corriger.</em></h1></div>
+          <p>Les questions sont inspirées des types d’exercices du cours, mais leur formulation est originale.</p>
+        </div>
+        <div class="practice-filter" id="practice-filter"></div>
+        <div id="practice-root"></div>
+      </section>
+
+      <section class="view" id="view-simulations" data-view="simulations">
+        <div class="page-hero compact">
+          <div><p class="eyebrow">Conditions réelles</p><h1>Trois examens blancs,<br><em>trois angles.</em></h1></div>
+          <p>Chaque simulation suit la structure officielle : QCM de grammaire, réécriture et lettre administrative. Temps conseillé : 3 heures.</p>
+        </div>
+        <div id="simulation-root"></div>
+      </section>
+
+      <section class="view" id="view-ressources" data-view="ressources">
+        <div class="page-hero compact">
+          <div><p class="eyebrow">Traçabilité</p><h1>Ressources<br><em>et références.</em></h1></div>
+          <p>Chaque explication du site pointe vers un document précis. Les ressources non extractibles sont signalées sans contenu inventé.</p>
+        </div>
+        <div class="source-policy">
+          <strong>Politique de contenu</strong>
+          <p>Ce site propose des explications et exercices originaux ou adaptés. Il ne republie pas les documents du cours, conformément à la mention de propriété du plan de cours.</p>
+        </div>
+        <div id="references-root"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
+
