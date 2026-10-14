@@ -286,6 +286,11 @@ window.FR1528_DATA = {
         ["Quelle formule est correcte ?", ["Veuillez agréer l’expression de mes salutations.", "Je vous prie d’agréer, Madame, mes salutations distinguées.", "Espérant une réponse, veuillez agréer mes salutations.", "Mes hommages."], 1, "La formule est syntaxiquement complète et reprend l’appel." ]
       ],
       rewrite: ["Réécrivez avec un terme précis : « L’appareil a un problème. »", "Corrigez la typographie : « Le test utilise 1.5L à 20°C. »", "Transformez à l’impératif : « Il faut vérifier le filtre. »"],
+      rewriteSolutions: [
+        { answer: "L’appareil présente un dysfonctionnement.", explanation: "« Dysfonctionnement » remplace le terme vague « problème ». Sans information supplémentaire dans l’énoncé, il ne faut pas inventer la nature de la panne." },
+        { answer: "Le test utilise 1,5 L à 20 °C.", explanation: "En français, on emploie la virgule décimale et une espace entre le nombre et le symbole de l’unité." },
+        { answer: "Vérifiez le filtre.", explanation: "À l’impératif, le pronom sujet disparaît. La terminaison -ez correspond à la deuxième personne du pluriel." }
+      ],
       task: "Vous représentez une résidence universitaire. Des pannes répétées d’éclairage touchent deux zones communes et compliquent les déplacements en soirée. Écrivez au responsable des installations pour présenter la situation, expliquer deux conséquences, demander une inspection, proposer un calendrier d’intervention et solliciter une réponse.",
       rubric: ["Structure complète de la lettre", "Mandat entièrement couvert", "Progression contexte → conséquences → demandes", "Registre courtois et neutre", "Langue et ponctuation révisées"]
     },
@@ -302,6 +307,11 @@ window.FR1528_DATA = {
         ["Quelle date respecte le modèle du cours ?", ["Ottawa, Mercredi le 14 Octobre 2026.", "Ottawa le 14 octobre 2026", "Ottawa, le 14 octobre 2026", "Ottawa, 14/10/26"], 2, "Virgule, déterminant « le », mois en minuscule, aucun point final." ]
       ],
       rewrite: ["Remplacez « faire » : « Faire une vérification du dispositif. »", "Reliez par une conséquence : « La limite est dépassée. L’appareil s’arrête. »", "Corrigez : « L’étude vise de déterminer la cause. »"],
+      rewriteSolutions: [
+        { answer: "Vérifier le dispositif.", explanation: "Le verbe précis « vérifier » remplace la construction lourde « faire une vérification ». « Procéder à la vérification du dispositif » serait également acceptable." },
+        { answer: "La limite est dépassée; l’appareil s’arrête donc.", explanation: "« Donc » indique que l’arrêt est la conséquence du dépassement. On pourrait aussi écrire : « La limite est dépassée; par conséquent, l’appareil s’arrête. »" },
+        { answer: "L’étude vise à déterminer la cause.", explanation: "La construction attendue est « viser à faire quelque chose »." }
+      ],
       task: "Vous travaillez pour une clinique communautaire. Le nouveau portail de rendez-vous envoie parfois des confirmations tardives. Écrivez à la direction du fournisseur pour décrire le problème sans inventer de statistiques, expliquer ses effets, demander une vérification technique, proposer une notification de secours et demander un échéancier.",
       rubric: ["Objet fondé sur un nom d’action", "Aucun fait inventé", "Vocabulaire précis et cohérent", "Demandes concrètes", "Salutation et signature conformes"]
     },
@@ -318,6 +328,11 @@ window.FR1528_DATA = {
         ["Quelle information ne doit pas être ajoutée au mandat ?", ["Une demande explicitement exigée", "Le nom fourni du destinataire", "Un chiffre précis absent du scénario", "La solution demandée"], 2, "Les activités insistent sur l’interdiction d’inventer des faits ou données absents." ]
       ],
       rewrite: ["Rendez précise la consigne : « Faites attention au câble. »", "Corrigez : « Les résultats de l’essai, sont satisfaisants. »", "Transformez en phrase professionnelle : « On a regardé les choses qui se passaient. »"],
+      rewriteSolutions: [
+        { answer: "Vérifiez que le câble n’est pas endommagé avant de brancher l’appareil.", explanation: "La consigne nomme une vérification observable et précise le moment de l’action." },
+        { answer: "Les résultats de l’essai sont satisfaisants.", explanation: "On ne place pas de virgule entre le sujet « Les résultats de l’essai » et le verbe « sont »." },
+        { answer: "Les phénomènes observés ont été relevés.", explanation: "La formulation remplace « on », « regardé » et « les choses » par un vocabulaire neutre et précis, sans ajouter de données." }
+      ],
       task: "Vous êtes responsable d’un laboratoire universitaire. Des changements de réservation sont communiqués trop tard, ce qui entraîne des conflits d’horaire et des déplacements inutiles. Écrivez à la directrice des services de laboratoire pour présenter la situation, en expliquer les effets, demander un préavis, proposer un calendrier partagé et inviter la directrice à discuter d’une solution.",
       rubric: ["Analyse complète du mandat", "Structure administrative complète", "Deux conséquences expliquées", "Deux demandes et une proposition", "Concision, précision et courtoisie", "Révision finale attentive"]
     }
