@@ -296,7 +296,10 @@
       <div class="sim-section-title"><h2>Partie 1 — Grammaire</h2><span>${simulation.questions.length} QCM · correction automatique</span></div>
       <div class="question-list">${simulation.questions.map((question, index) => renderSimQuestion(simulation, question, index, saved)).join("")}</div>
       <div class="sim-section-title"><h2>Partie 2A — Réécriture</h2><span>3 réponses · modèles après soumission</span></div>
-      <div class="question-list">${simulation.rewrite.map((prompt, index) => `<article class="question-card"><div class="question-meta"><span>Réécriture ${index + 1}</span><span>Réponse ouverte</span></div><h3>${escapeHTML(prompt)}</h3><textarea class="correction-area" data-sim-rewrite="${index}" ${saved.submitted ? "disabled" : ""}>${escapeHTML(saved.rewrites[index] || "")}</textarea></article>`).join("")}</div>
+      <div class="question-list">${simulation.rewrite.map((prompt, index) => {
+        const solution = simulation.rewriteSolutions?.[index];
+        return `<article class="question-card"><div class="question-meta"><span>Réécriture ${index + 1}</span><span>Réponse ouverte</span></div><h3>${escapeHTML(prompt)}</h3><textarea class="correction-area" data-sim-rewrite="${index}" ${saved.submitted ? "disabled" : ""}>${escapeHTML(saved.rewrites[index] || "")}</textarea>${saved.submitted && solution ? `<div class="solution-box"><p class="solution-label">Proposition de réponse</p><strong>${escapeHTML(solution.answer)}</strong><p>${escapeHTML(solution.explanation)}</p></div>` : ""}</article>`;
+      }).join("")}</div>
       <div class="sim-section-title"><h2>Partie 2B — Lettre administrative</h2><span>250 à 300 mots conseillés</span></div>
       <article class="writing-task"><h3>Mandat</h3><p>${escapeHTML(simulation.task)}</p><textarea class="sim-answer" data-sim-draft placeholder="Rédigez votre lettre complète…" ${saved.submitted ? "disabled" : ""}>${escapeHTML(saved.draft || "")}</textarea><div class="editor-actions"><button class="button primary" type="button" id="submit-simulation" ${saved.submitted ? "disabled" : ""}>Soumettre la simulation</button><button class="button ghost" type="button" id="save-simulation">Enregistrer</button></div></article>
       ${saved.submitted ? renderSimulationResult(simulation, saved) : ""}
